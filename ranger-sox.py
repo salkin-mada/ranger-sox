@@ -313,3 +313,43 @@ class flac(sox_base):
         command = f"sox '{fn}' {param} '{newfn}' "
 
         return command
+
+
+class rnn16(sox_base):
+    """:rnn16 <filename>
+
+    Convert to 16k, 16b and mono
+    """
+
+    def soxcommand(self, fn):
+        suffix = "rnn16"
+
+        newfn = self.filename_with(suffix, fn)
+
+        # The sox operation being used
+        param = "-r 16000 -c 1 -b 16;"
+
+        # The full command
+        command = f"sox '{fn}' {param} '{newfn}' "
+
+        return command
+
+
+class rnn32(sox_base):
+    """:rnn32 <filename>
+
+    Convert to 32k, 16b and mono
+    """
+
+    def soxcommand(self, fn):
+        suffix = "rnn32"
+
+        newfn = self.filename_with(suffix, fn)
+
+        # The sox operation being used
+        param = "-r 32000 -c 1 -b 16;"
+
+        # The full command
+        command = f"sox '{fn}' {param} '{newfn}' "
+
+        return command
