@@ -322,15 +322,15 @@ class rnn16(sox_base):
     """
 
     def soxcommand(self, fn):
-        suffix = "rnn16"
+        suffix = "_rnn16"
 
         newfn = self.filename_with(suffix, fn)
 
         # The sox operation being used
-        param = "-r 16000 -c 1 -b 16;"
+        param = "-r 16000 -c 1 -b 16"
 
         # The full command
-        command = f"sox '{fn}' {param} '{newfn}' "
+        command = f"sox '{fn}' {param} '{newfn}'"
 
         return command
 
@@ -342,14 +342,14 @@ class rnn32(sox_base):
     """
 
     def soxcommand(self, fn):
-        suffix = "rnn32"
+        suffix = "_rnn32"
 
         newfn = self.filename_with(suffix, fn)
 
         # The sox operation being used
-        param = "-r 32000 -c 1 -b 16;"
+        param = "-r 32000 -c 1 -b 16"
 
         # The full command
-        command = f"sox '{fn}' {param} '{newfn}' "
+        command = f"sox '{fn}' {param} '{newfn}'"
 
         return command
